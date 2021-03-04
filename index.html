@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--Estilos-->
+    <style>
+        .all{
+            margin-left: 35%;
+            margin-top: 5%;
+        }
+
+        .titulo{
+            margin-bottom: 10%;
+        }
+ 
+        input[type="button"]{ 
+        background-color:rgb(8, 8, 8); 
+        color: black; 
+        border: solidrgb(90, 86, 89) 2px;
+        color: white; 
+        width: 110%;
+        }
+
+        input[type="button"]:hover{ 
+        background-color:rgb(74, 102, 182); 
+        } 
+ 
+        input[type="text"]{ 
+        text-align: right;    
+        background-color:white; 
+        border: solid rgb(90, 86, 89) 2px; 
+        width: 99% 
+        } 
+</style> 
+</head>
+<body class="all"> <!--Acá centro todo-->
+    <h1 class="titulo">~Calculadora V2~</h1>
+    <!-- Calculadora -->
+     <table class="ml-5">
+        <tr> 
+           <td colspan="4"><input type="text" id="action" placeholder="0"></td> 
+        </tr> 
+        <tr> 
+            <td colspan="3"><input type="button" value="CLEAR" onclick="clr()"></td> 
+            <td><input type="button" value="/" onclick="tcl('/')"> </td> 
+         </tr> 
+        <tr> 
+           <td><input type="button" value="7" onclick="tcl('7')"> </td> 
+           <td><input type="button" value="8" onclick="tcl('8')"> </td> 
+           <td><input type="button" value="9" onclick="tcl('9')"> </td> 
+           <td><input type="button" value="X" onclick="tcl('*')"> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="4" onclick="tcl('4')"> </td> 
+           <td><input type="button" value="5" onclick="tcl('5')"> </td> 
+           <td><input type="button" value="6" onclick="tcl('6')"> </td> 
+           <td><input type="button" value="-" onclick="tcl('-')"> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="1" onclick="tcl('1')"> </td> 
+           <td><input type="button" value="2" onclick="tcl('2')"> </td> 
+           <td><input type="button" value="3" onclick="tcl('3')"> </td> 
+           <td><input type="button" value="+" onclick="tcl('+')"> </td> 
+        </tr> 
+        <tr> 
+           <td><input type="button" value="." onclick="tcl('.')"> </td> 
+           <td><input type="button" value="0" onclick="tcl('0')"> </td>
+           <td colspan="2"><input type="button" value="=" onclick="execute()"> </td>
+        </tr> 
+     </table> 
+
+     <!--Javascript-->
+     <script> 
+
+        function tcl(valor) 
+        { 
+            document.getElementById("action").value+=valor
+        } 
+
+        let i;
+        let j;
+
+        function execute() 
+        { 
+            i = document.getElementById("action").value 
+            j = eval(i) 
+            document.getElementById("action").value = j 
+        }
+
+        function clr() 
+        { 
+            document.getElementById("action").value = "" 
+        } 
+     </script>
+
+     
+     <!--Sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--js bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    </body>
+</html>
