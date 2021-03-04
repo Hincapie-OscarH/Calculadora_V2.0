@@ -90,7 +90,11 @@
             i = document.getElementById("action").value 
             j = eval(i) 
             document.getElementById("action").value = j 
+            if(j === Infinity){
+                alert("¡Error! \n Recuerda que no se puede dividir por cero")
+            }
         }
+
 
         function clr() 
         { 
